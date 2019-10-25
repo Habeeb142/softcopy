@@ -1,0 +1,20 @@
+
+button {
+    background-color: #ff6c00;
+    color: wheat;
+    border: 0
+}
+
+h5 {
+    font-size: 12px;
+}
+
+a{
+    font-weight: normal;
+    font-size: 13px
+}
+
+a:active {
+    color: #ff6c00
+}
+

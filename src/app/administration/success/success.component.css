@@ -1,0 +1,12 @@
+a {
+    color: #ff6c00;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 17px;
+    text-decoration: none;
+    margin-top: 200px;
+}
+a:hover {
+    background-color: #ff6c00;
+    color: #fff;
+}

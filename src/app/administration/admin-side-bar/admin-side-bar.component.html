@@ -1,0 +1,71 @@
+<div>
+<div class="col-6 col-md-8 offset-5 offset-md-3">
+    <div class="row col-12">
+      <input type="text" class="form-control mt-3 col-9 col-md-11" placeholder="Enter a keyword, Title, Author, or ISBN">
+      <button class="btn col-2 col-md-1 mt-3" style="background-color: #ff6c00"><i class="fa fa-search"></i></button>
+    </div>
+
+    <div class="row mt-1 journal">
+      <div class="col-12">
+        <app-journal></app-journal>
+      </div>
+    </div>
+    <div class="row mt-1 textbook">
+      <div class="col-12">
+        <app-textbook></app-textbook>
+      </div>
+    </div>
+  
+    <div class="thesis">
+  
+    </div>
+    
+  </div>
+
+  <div class="bg-light border-right font-weight-bold col-5 col-md-2 ml-2 fixed-top  mt-2" id="sidebar-wrapper">
+    <div style="color: grey;" class="p-3">
+      Welcome Admin
+    </div>
+
+    <div class="list-group list-group-flush">
+        <a href="/admin" class="sidebar-header list-group-item list-group-item-action bg-light font-weight-bold">Dashboard</a>    
+    </div>
+    
+    <div class="list-group list-group-flush mt-3">
+        <a href="/add" class="sidebar-header list-group-item list-group-item-action bg-light font-weight-bold">Add Books</a>    
+    </div>
+
+    <div class="list-group list-group-flush mt-1">
+        <div class="sidebar-header p-1 mb-2">SOFT RESEARCHERS</div>
+        <a class="list-group-item list-group-item-action bg-light" (click)='journalOn()'>Journals & Proceedings</a>
+        <a class="list-group-item list-group-item-action bg-light" (click)='textbookOn()'>Textbook</a>
+        <a href="" class="list-group-item list-group-item-action bg-light">Thesis & Dissertation</a>
+    </div>
+  
+  
+    <div class="list-group list-group-flush mt-4" style="cursor: pointer;">
+        <div class="sidebar-header p-2">SOFT READERS</div>
+    </div>
+  
+    <div class="list-group list-group-flush mt-4">
+        <div class="sidebar-header p-1 mb-2">SMART RESEARCHERS</div>
+        <a href="" class="list-group-item list-group-item-action bg-light">Science & Technology</a>
+        <a href="" class="list-group-item list-group-item-action bg-light">Critical Thinking</a>
+        <a href="" class="list-group-item list-group-item-action bg-light">Writing & Lnaguage</a>
+        <a href="" class="list-group-item list-group-item-action bg-light">Cultural Awareness</a>
+    </div>
+
+    <div class="list-group list-group-flush mt-3">
+        <a href="/" class="sidebar-header list-group-item list-group-item-action bg-light font-weight-bold">Home</a>    
+    </div>
+
+    <div class="list-group list-group-flush mt-3">
+        <a class="sidebar-header list-group-item list-group-item-action bg-light font-weight-bold">Change Password</a>    
+    </div>
+
+    <div class="list-group list-group-flush mt-3">
+        <a class="sidebar-header list-group-item list-group-item-action bg-light font-weight-bold">Logout</a>    
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,7 @@
+{
+    "/softcopy/backend": {
+        "target": "http://localhost:80",
+        "secure": false,
+        "origin": true
+    }
+}

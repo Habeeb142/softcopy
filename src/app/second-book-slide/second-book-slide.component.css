@@ -1,0 +1,47 @@
+i {
+    color: #f1a46d;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.card-body {
+    border-right: 7px solid #f1a46d;
+    border-left: 14px solid #f1a46d;
+    background-color: #F6F6F6;
+}
+
+@media screen and (max-width: 650px) {
+    .card-body {
+        border-right: 1px solid #f1a46d;
+        border-left: 1px solid #f1a46d;
+        background-color: #F6F6F6;
+    }
+}
+
+#findingsMobile::-webkit-scrollbar{
+    width: .2em; 
+    height: .2em
+}
+
+#findingsMobile::-webkit-scrollbar-thumb{
+    background-color: #ff6c00;
+    border-radius: 10px
+}
+
+
+
+#findingsMobile{
+    overflow-x: auto;
+    white-space: nowrap;
+    color: whitesmoke
+}
+
+.findingsMobile {
+    display: inline-block;
+}
+
+
+img {
+    border-radius: 3px
+}

@@ -1,0 +1,73 @@
+button {
+    border: 0;
+    font-size: 14px
+}
+i {
+    color: #f1a46d;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.up {
+    margin-top: 100px;
+}
+.up1{
+    margin-top: 160px;
+}
+.card-body {
+    border-right: 7px solid #f1a46d;    
+    border-left: 14px solid #f1a46d;
+    background-color: #F6F6F6;
+}
+
+@media screen and (max-width: 650px) {
+    .card-body {
+        border-right: 1px solid #f1a46d;
+        border-left: 1px solid #f1a46d;
+    }
+}
+
+#findingsMobile::-webkit-scrollbar, #irresistibleMobile::-webkit-scrollbar {
+    width: .2em; 
+    height: .2em
+}
+
+#what_we_are_doingMobile::-webkit-scrollbar, #just_arrivedMobile::-webkit-scrollbar {
+    width: .2em;
+    height: .2em
+}
+
+#findingsMobile::-webkit-scrollbar-thumb, #irresistibleMobile::-webkit-scrollbar-thumb{
+    background-color: #ff6c00;
+    border-radius: 10px
+}
+
+#what_we_are_doingMobile::-webkit-scrollbar, #just_arrivedMobile::-webkit-scrollbar {
+    background-color: #ff6c00;
+    border-radius: 10px
+}
+
+#findingsMobile, #irresistibleMobile{
+    overflow-x: auto;
+    white-space: nowrap;
+    color: whitesmoke
+}
+
+#what_we_are_doingMobile, #just_arrivedMobile{
+    overflow-x: auto;
+    white-space: nowrap;
+    color: whitesmoke
+}
+
+.findingsMobile, .irresistibleMobile {
+    display: inline-block;
+}
+
+.what_we_are_doingMobile, .just_arrivedMobile{
+    display: inline-block;
+}
+
+img {
+    border-radius: 3px
+}

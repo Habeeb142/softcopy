@@ -1,0 +1,23 @@
+.header {
+    text-align: center;
+    color: #ff6c00;
+    font-size: 35px;
+    text-shadow: 2px 2px 4px #ff6c00;
+}
+h2 {
+    color: grey;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+h2:hover {
+    color: black;
+}
+
+i {
+    color: #ff6c00;
+}
+
+.card-body {
+    background-color: #F6F6F6;
+}

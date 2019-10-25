@@ -1,0 +1,12 @@
+label {
+    color: grey;
+    font-size: 11;
+}
+
+input, textarea {
+    font-size: 12px;
+}
+
+span {
+    color: red;
+}

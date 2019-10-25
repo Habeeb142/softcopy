@@ -1,0 +1,112 @@
+#sidebar-wrapper {
+    border-radius: 10px;
+    top: 100px;
+    height: 90vh;
+    overflow: auto;
+    /* opacity: .67 */
+}
+
+#sidebar-wrapper::-webkit-scrollbar {
+    width: .5em;
+    height: .3em
+}
+
+#sidebar-wrapper::-webkit-scrollbar-thumb {
+    background-color: #ff6c00;
+    border-radius: 10px
+}
+
+.newsletter {
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.newsletter-div {
+    /* border: 1px solid grey; */
+    border-radius: 10px;
+    padding: 17px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.sidebar-header{
+    font-size: 14px;
+    box-shadow: 2px 5px 5px grey
+}
+
+.list-group {
+    opacity: .7;
+}
+
+.list-group {
+    border: 1px solid grey;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.spec {
+    font-weight: normal;
+    font-size: 14px
+}
+.a {
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 4px;
+    font-size: 13px
+}
+
+button {
+    background-color: #ff6c00;
+    color: wheat;
+    border: 0
+}
+
+button:hover {
+    background-color: white;
+    color: #ff6c00
+}
+
+h5 {
+    font-size: 12px;
+    letter-spacing: 1px
+}
+
+a{
+    font-weight: normal;
+    font-size: 13px
+}
+
+a:hover {
+    color: #ff6c00
+}
+
+#horizontal-wrapper {
+    max-height: 30px;
+    overflow-x: scroll;
+    display: inline;
+}
+
+@media screen and (max-width: 650px) {
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #333333;
+    }
+    
+
+
+      
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+      }
+      
+      li a:hover {
+        background-color: #111111;
+      }
+
+}
