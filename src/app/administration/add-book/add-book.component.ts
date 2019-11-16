@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,9 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddBookComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auth: AuthService, public rout: Router) { }
 
   ngOnInit() {
+    (this.auth.checkAuth())? '' : this.rout.navigate(['admin'])
   }
 
 }

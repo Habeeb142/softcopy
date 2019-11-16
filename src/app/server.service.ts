@@ -20,8 +20,28 @@ export class ServerService {
   submitCover(x){
     return this.http.post('/softcopy/backend/submitPic.php',x);
   }
+  submitImgAuthor(x){
+    return this.http.post('/softcopy/backend/submitTextBookImage.php',x);
+  }
 
-  submitFile(x){console.log(x);
+  submitFile(x){
     return this.http.post('/softcopy/backend/submitFile.php',x);
   }
+
+  submitChapter(x){
+    return this.http.post('/softcopy/backend/submitTextBookChapter.php',x);
+  }
+
+  submitTextBook(x, y, z, w){
+    return this.http.post('/softcopy/backend/submitTextBook.php', {x,y,z,w});
+  }
+
+  submitThesis(x, y, z) {
+    return this.http.post('/softcopy/backend/submitThesis.php', {x, y, z});
+  }
+
+  submitSoftReader(x, y, z, w) {
+    return this.http.post('/softcopy/backend/submitSoftReaders.php', {x, y, z, w});
+  }
+
 }

@@ -1,204 +1,61 @@
-<div class="card d-none d-md-block up">
-  <div class="card-header">
-    <button class="p-2 col-3"  id="btn1" (click)='finding()'>Findings & Submission</button>
-    <button class="p-2 col-3"  id="btn2" (click)='irresistible()' >Irresistible Authors</button>
-    <button class="p-2 col-3" id="btn3" (click)='what_we_are_doing()'>What We're Reading</button>
-    <button class="p-2 col-3" id="btn4" (click)='just_arrived()'>Just Arrived</button>
+<div class="card up">
+  <div class="card-header d-none d-md-block row">
+    <button class="p-2 col-3  btn1" (click)='finding()'>Findings & Submission</button>
+    <button class="p-2 col-3 btn2" (click)='irresistible()' >Irresistible Authors</button>
+    <button class="p-2 col-3 btn3" (click)="what_we_are_doing('desktop')">What We're Reading</button>
+    <button class="p-2 col-3 btn4" (click)="just_arrived('desktop')">Just Arrived</button>
   </div>
-
-  <div class="card-body">
-    <!-- first section for findings -->
-    <div id="findings" class="animated row" >
-      <i class="fa fa-arrow-left ml-1 mr-1" (click)="arrow_left_findings()"></i>
-      <!-- first slide to show before toggling -->
-      <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img1 mr-1" width="120" height="150" alt=""></a>
-      <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="animated img1 mr-1" height="150" alt=""></a>
-      <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img1 mr-1" width="120" height="150" alt=""></a>
-      <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="animated img1 mr-1" height="150" alt=""></a>
-      <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img1 mr-1" width="120" height="150" alt=""></a>
-      <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="animated img1 mr-1" height="150" alt=""></a>
-      <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img1 mr-1" width="120" height="150" alt=""></a>
-      <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img1 " width="120" height="150" alt=""></a>
-      <!-- end -->
-
-      <!-- second -->
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" style="display: none" class="img2 mr-1 animated" width="120" height="150" alt=""></a>
-      <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" style="display: none" class="img2 mr-1 animated" height="150" alt=""></a>
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" style="display: none" class="img2 mr-1 animated" width="120" height="150" alt=""></a>
-      <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="img2 mr-1 animated" style="display: none" height="150" alt=""></a>
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" style="display: none" class="img2 mr-1 animated" width="120" height="150" alt=""></a>
-      <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" style="display: none" class="img2 mr-1 animated" height="150" alt=""></a>
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" style="display: none" class="img2 mr-1 animated" width="120" height="150" alt=""></a>
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" style="display: none" class="img2 mr-1 animated" width="120" height="150" alt=""></a>
-      
-      <!--  end -->
-
-      <i class="fa fa-arrow-right ml-1" (click)="arrow_right_findings()"></i>
+    <!-- //mobile -->
+    <div class="row mt-5 d-block d-md-none">
+      <button class="p-2 col-6 btn1 mt-3"  (click)='finding()' >Findings & Submission</button>
+      <button class="p-2 col-6 btn2" (click)='irresistible()' >Irresistible Authors</button>
     </div>
-    <!-- end -->
-    
-    <!-- second section for irresistible -->
-    <div id="irresistible" class="animated row">
-        <i class="fa fa-arrow-left mr-2" (click)='arrow_left_findings()'></i>
-        <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="animated img1 mr-1" width="120" height="150" alt=""></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="animated img1 mr-1" height="150" alt=""></a>
-        <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="animated img1 mr-1" width="120" height="150" alt=""></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="animated img1 mr-1" height="150" alt=""></a>
-       <a href=""> <img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="animated img1 mr-1" width="120" height="150" alt=""></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="animated img1 mr-1" height="150" alt=""></a>
-        <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="animated img1 mr-1" width="120" height="150" alt=""></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img1 " width="120" height="150" alt=""></a>
-
-        <!-- second shw -->
-        <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="animated img2 mr-1" width="120" height="150" alt="" style="display: none"></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="animated img2 mr-1" height="150" alt="" style="display: none"></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img2 mr-1" width="120" height="150" alt="" style="display: none"></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="animated img2 mr-1" height="150" alt="" style="display: none"></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img2 mr-1" width="120" height="150" alt="" style="display: none"></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="animated img2 mr-1" height="150" alt="" style="display: none"></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img2 mr-1" width="120" height="150" alt="" style="display: none"></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img2 " width="120" height="150" alt="" style="display: none"></a>
-        <i class="fa fa-arrow-right ml-2" (click)='arrow_right_findings()'></i>
-    </div>
-    <!-- end -->
-
-    <!-- third section what we are doin -->
-    <div id="what_we_are_doing" class="animated row">
-        <i class="fa fa-arrow-left mr-2" (click)='arrow_left_findings()'></i>
-        <!-- first slide -->
-        <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="animated img1 mr-1" width="120" height="150" alt=""></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="animated img1 mr-1" height="150" alt=""></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img1 mr-1" width="120" height="150" alt=""></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="animated img1 mr-1" height="150" alt=""></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img1 mr-1" width="120" height="150" alt=""></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="animated img1 mr-1" height="150" alt=""></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img1 mr-1" width="120" height="150" alt=""></a>
-       <a href=""> <img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img1 " width="120" height="150" alt=""></a>
-
-       <!-- end -->
-       <!-- second slide -->
-      <a href=""> <img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="img2 animated mr-1" width="120" height="150" alt="" style="display: none"></a>
-       <a href=""> <img src="https://placeit-assets.s3-accelerate.amazonaws.com/landing-pages/placeitpage-redo-ebook-cover-mockup-templates/Mindfulness.jpg" width="120" class="mr-1 animated img2" height="150" alt="" style="display: none"></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="img2 animated mr-1" width="120" height="150" alt="" style="display: none"></a>
-        <a href=""><img src="https://placeit-assets.s3-accelerate.amazonaws.com/landing-pages/placeitpage-redo-ebook-cover-mockup-templates/Mindfulness.jpg" width="120" class="mr-1 img2 animated" height="150" alt="" style="display: none"></a>
-       <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="img2 animated mr-1" width="120" height="150" alt="" style="display: none"></a>
-       <a href=""><img src="https://placeit-assets.s3-accelerate.amazonaws.com/landing-pages/placeitpage-redo-ebook-cover-mockup-templates/Mindfulness.jpg" width="120" class="img2 mr-1 animated" height="150" alt="" style="display: none"></a>
-       <a href=""><img src="https://placeit-assets.s3-accelerate.amazonaws.com/landing-pages/placeitpage-redo-ebook-cover-mockup-templates/Mindfulness.jpg" class="mr-1 img2 animated" width="120" height="150" alt="" style="display: none"></a>
-       <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="img2 animated" width="120" height="150" alt="" style="display: none"></a>
-      <!-- end -->
-      <i class="fa fa-arrow-right ml-2" (click)='arrow_right_findings()'></i>
-    </div>
-    <!-- end -->
-
-    <!-- just arrive -->
-    <div id="just_arrived" class="animated row">
-        <i class="fa fa-arrow-left mr-2" (click)='arrow_left_findings()'></i>
-        <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="animated img1 mr-1" width="120" height="150" alt=""></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="animated img1 mr-1" height="150" alt=""></a>
-        <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="animated img1 mr-1" width="120" height="150" alt=""></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="animated img1 mr-1" height="150" alt=""></a>
-       <a href=""> <img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="animated img1 mr-1" width="120" height="150" alt=""></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="animated img1 mr-1" height="150" alt=""></a>
-        <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="animated img1 mr-1" width="120" height="150" alt=""></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img1 " width="120" height="150" alt=""></a>
-
-        <!-- second shw -->
-        <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="animated img2 mr-1" width="120" height="150" alt="" style="display: none"></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="animated img2 mr-1" height="150" alt="" style="display: none"></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img2 mr-1" width="120" height="150" alt="" style="display: none"></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="animated img2 mr-1" height="150" alt="" style="display: none"></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img2 mr-1" width="120" height="150" alt="" style="display: none"></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="120" class="animated img2 mr-1" height="150" alt="" style="display: none"></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img2 mr-1" width="120" height="150" alt="" style="display: none"></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated img2" width="120" height="150" alt="" style="display: none"></a>
-        <i class="fa fa-arrow-right ml-2" (click)='arrow_right_findings()'></i>
-    </div>
-
-  </div>
-</div>
-
-<!-- mobile -->
-<div class="card d-block d-md-none up1">
   
-  <div class="card-header">
-    <button class="p-2 col-6" id="btnMobile1" (click)='findingMobile()'>Findings & Submission</button>
-    <button class="p-2 col-6" id="btnMobile2" (click)='irresistibleMobile()' >Irresistible Authors</button>
-  </div>
+    <div class="card-body animated">
+      <!-- first section for findings -->
+      <div id="findings" class="animated row" >
+        
+      <!-- first slide to show before toggling -->
 
-  <div class="card-body">
-    <!-- first section for findings -->
-    <div id="findingsMobile"  class="d-md-none findingsMobile col-12">
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="mb-2 mr-1 animated" width="80" height="100" alt=""></a>
-      <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="80" class="mr-1 mb-2 animated" height="100" alt=""></a>
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="mr-1 mb-2 animated" width="80" height="100" alt=""></a>
-      <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="80" class="mr-1 mb-2 animated" height="100" alt=""></a>
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="mr-1 mb-2 animated" width="80" height="100" alt=""></a>
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="mr-1 mb-2 animated" width="80" height="100" alt=""></a>
-      <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="80" class="mr-1 mb-2 animated" height="100" alt=""></a>
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="mr-1 mb-2 animated" width="80" height="100" alt=""></a>
-      <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="80" class="mr-1 mb-2 animated" height="100" alt=""></a>
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="mr-1 mb-2 animated" width="80" height="100" alt=""></a>
-      <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="80" class="mr-1 mb-2 animated" height="100" alt=""></a>
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="mr-1 mb-2 animated" width="80" height="100" alt=""></a>
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="mr-1 mb-2 animated" width="80" height="100" alt=""></a>
+        <div id="findingsMobile"  class="findingsMobile animated col-11" style="min-height: 260px;">
+          <a href="/show/{{data?.referal}}/{{data?.id}}/{{data?.type}}" *ngFor="let data of data; index as i" class="figure p-3 img1 animated" id="{{i}}">
+            <img src="softcopy/backend/cover/{{data?.cover}}" class="figure-img img-fluid rounded" style="height: 140px; width: 100px;" alt="">
+            <figcaption class="figure-caption text-center" ><del>${{data?.fakedollars}}</del></figcaption>
+            <figcaption class="figure-caption text-center" style="color: #ff6c00">#{{data?.price}} | ${{data?.dollars}}</figcaption>
+            <div class="middle text-center">
+              {{data?.tittle}}
+            </div>
+          </a>
+        </div>
+
+        <!-- //button for scroll -->
+        <div class="row container scroll" style="justify-content: center;">
+          <a href="#0" class="p-1 a"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpUA4Cefg7TMfQB08zyVOp557ojIcK5UqhsV8TSCKOFfp39BMy3A&s" width="30" height="30" alt=""></a>
+         
+          <a href="#10" class="p-1 a"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpUA4Cefg7TMfQB08zyVOp557ojIcK5UqhsV8TSCKOFfp39BMy3A&s" width="30" height="30" alt=""></a>
+         
+        </div>
+      </div>
+      <!-- end -->
+    </div> 
+
+
+    <div class="row mt-3 d-block d-md-none">
+      <button class="p-2 col-6 btn3"  (click)="what_we_are_doing('mobile')" >What We're Reading</button>
+      <button class="p-2 col-6 btn4" (click)="just_arrived('mobile')" >Just Arrived</button>
     </div>
 
+    <div id="findingsMobile"  class="findingsMobile animated col-12 d-block d-md-none" style="min-height: 260px;">
+        <a href="/show/{{data?.referal}}/{{data?.id}}/{{data?.type}}" *ngFor="let data2 of data2;" class="figure p-3 animated">
+          <img src="softcopy/backend/cover/{{data2?.cover}}" class="figure-img img-fluid rounded" style="height: 140px; width: 100px;" alt="">
+          <figcaption class="figure-caption text-center" ><del>${{data2?.fakedollars}}</del></figcaption>
+          <figcaption class="figure-caption text-center" style="color: #ff6c00">#{{data2?.price}} | ${{data2?.dollars}}</figcaption>
+          <div class="middle text-center">
+            {{data2?.tittle}}
+          </div>
+        </a>
+     </div>
+  
 
-    <div id="irresistibleMobile" style="display: none;" class="d-md-none irresistibleMobile col-12">
-        <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="animated mr-1 mb-2" width="80" height="100" alt=""></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="80" class="animated mr-1 mb-2" height="100" alt=""></a>
-        <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="animated mr-1 mb-2" width="80" height="100" alt=""></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="80" class="animated mr-1 mb-2" height="100" alt=""></a>
-       <a href=""> <img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="animated mr-1 mb-2" width="80" height="100" alt=""></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="80" class="animated mr-1 mb-2" height="100" alt=""></a>
-        <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="animated mr-1 mb-2" width="80" height="100" alt=""></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated mb-2" width="80" height="100" alt=""></a>
-    </div>
-    <!-- end -->
-  </div>
-</div>
-
-<!-- 2nd mobile -->
-<div class="card d-block d-md-none">
-  <div class="card-header">
-    <button class="p-2 col-6" id="btnMobile3" (click)='what_we_are_doingMobile()'>What We're Reading</button>
-    <button class="p-2 col-6" id="btnMobile4" (click)='just_arrivedMobile()'>Just Arrived</button>
-  </div>
-
-  <div class="card-body">
-    <!-- what we do -->
-    <div id="what_we_are_doingMobile" class="d-md-none what_we_are_doingMobile col-12 " >
-      
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="mr-1 mb-1 animated" width="80" height="100" alt=""></a>
-      <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="80" class="mr-1 mb-1 animated" height="100" alt=""></a>
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="mr-1 mb-1 animated" width="80" height="100" alt=""></a>
-      <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="80" class="mr-1 animated mb-1" height="100" alt=""></a>
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="mr-1 mb-1 animated" width="80" height="100" alt=""></a>
-      <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="80" class="mr-1 animated mb-1" height="100" alt=""></a>
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="mr-1 mb-1 animated" width="80" height="100" alt=""></a>
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="mr-1 mb-1 animated" width="80" height="100" alt=""></a>
-      <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="80" class="mr-1 animated mb-1" height="100" alt=""></a>
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="mr-1 mb-1 animated" width="80" height="100" alt=""></a>
-      <a href=""><img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="mr-1 mb-1 animated" width="80" height="100" alt=""></a>
-     
-      
-      <!--  end -->
-    </div>
-
-    <div id="just_arrivedMobile"  style="display: none;" class="d-md-none col-12 just_arrivedMobile">
-       <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated mb-1 mr-1" width="80" height="100" alt=""></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="80" class="animated mb-1 mr-1" height="100" alt=""></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated mb-1 mr-1" width="80" height="100" alt=""></a>
-        <a href=""><img src="http://www.creativindie.com/wp-content/uploads/2013/10/got_hc1.jpg" width="80" class="animated mb-1 mr-1" height="100" alt=""></a>
-       <a href=""> <img src="http://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" class="animated mb-1 mr-1" width="80" height="100" alt=""></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" width="80" class="animated mb-1 mr-1" height="100" alt=""></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated mb-1 mr-1" width="80" height="100" alt=""></a>
-        <a href=""><img src="https://www.bookbaby.com/plugins/coverscarousel/images/basic/Mothergoose.jpg" class="animated mb-1" width="80" height="100" alt=""></a>
-    </div>
-    <!-- end -->
-
-  </div>
-
-</div>
-
+</div> 
 

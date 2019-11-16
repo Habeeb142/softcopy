@@ -1,8 +1,8 @@
 .header {
     text-align: center;
-    color: #ff6c00;
+    color: grey;
     font-size: 35px;
-    text-shadow: 2px 2px 4px #ff6c00;
+    /* text-shadow: 2px 2px 4px #ff6c00; */
 }
 h2 {
     color: grey;
@@ -20,4 +20,23 @@ i {
 
 .card-body {
     background-color: #F6F6F6;
+}
+
+#quote {
+    font-size: 13px;
+}
+
+@media screen and (max-width: 650px) {
+    .card-body {
+        font-size: 14px;
+    }
+    .header {
+        font-size: 25px;
+    }
+
+    h2, h3 {
+        color: grey;
+        cursor: pointer;
+        font-size: 18px;
+    }
 }

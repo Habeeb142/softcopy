@@ -1,0 +1,79 @@
+<!-- Modal -->
+<div class="modal fade mt-5" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title font-weight-bold" id="exampleModalLongTitle">SOFT RESEARCHERS</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <h5 class=" mt-2 font-weight-bold">{{ header }}</h5>
+              <a href="/{{q}}/Bussiness & Finance" class="list-group-item list-group-item-action bg-light">Bussiness & Finance</a>
+              <a href="/{{q}}/Communication and Journalism" class="list-group-item list-group-item-action bg-light">Communication and Journalism</a>
+              <a href="/{{q}}/Computer Science" class="list-group-item list-group-item-action bg-light">Computer Science</a>
+              <a href="/{{q}}/Education" class="list-group-item list-group-item-action bg-light">Education</a>
+              <a href="/{{q}}/Enginnering" class="list-group-item list-group-item-action bg-light">Enginnering</a>
+              <a href="/{{q}}/Humanitarian" class="list-group-item list-group-item-action bg-light">Humanitarian</a>
+              <a href="/{{q}}/Law" class="list-group-item list-group-item-action bg-light">Law</a>
+              <a href="/{{q}}/Medicine & Health Sciences" class="list-group-item list-group-item-action bg-light">Medicine & Health Sciences</a>
+              <a href="/{{q}}/Library & Archival Information Technology" class="list-group-item list-group-item-action bg-light">Library & Archival Information Technology</a>
+              <a href="/{{q}}/Science & Mathematics" class="list-group-item list-group-item-action bg-light">Science & Mathematics</a>
+              <a href="/{{q}}/Social Sciences" class="list-group-item list-group-item-action bg-light">Social Sciences</a>
+              <a href="/{{q}}/Test Prep & Study Guides" class="list-group-item list-group-item-action bg-light">Test Prep & Study Guides</a>
+          </div>
+      </div>
+  </div>    
+</div>
+<!-- end modal -->
+
+<div class="content">
+  <app-nav ></app-nav>
+  <app-side-bar></app-side-bar>
+  
+  <!-- displaying data -->
+  <div class="m-3 ml-md-5">
+      <div class="card-body animated up">
+        <div class="card-header text-center container font-weight-bold col-8 offset-md-3">{{query}}</div>
+          <!-- first section for findings -->
+          <div id="findings" class="animated row md-container offset-md-2" >
+            
+          <!-- first slide to show before toggling -->
+    
+            <div id="findingsMobile"  class="findingsMobile animated col-md-10" style="min-height: 260px;">
+              <a href="/show/{{data?.referal}}/{{data?.id}}/{{data?.type}}" *ngFor="let data of newData" class="figure p-3 img1 animated">
+                <img src="softcopy/backend/cover/{{data?.cover}}" class="figure-img img-fluid rounded" style="height: 140px; width: 100px;" alt="">
+                <figcaption class="figure-caption text-center" ><del>${{data?.fakedollars}}</del></figcaption>
+                <figcaption class="figure-caption text-center" style="color: #ff6c00">#{{data?.price}} | ${{data?.dollars}}</figcaption>
+                <div class="middle text-center">
+                  {{data?.tittle}}
+                </div>
+              </a>
+            </div>
+    
+          </div>
+          <!-- end -->
+
+          <div class="animated row md-container offset-md-2 mt-3 pt-3" *ngFor = "let data of newData" style="border-top: 3px solid white;" >
+            
+              <!-- first slide to show before toggling -->
+              <div class="col-md-2">
+                <img src="softcopy/backend/cover/{{data?.cover}}" class="figure-img img-fluid rounded" style="height: 140px; width: 100px;" alt="">
+                <figcaption class="figure-caption" ><del>${{data?.fakedollars}}</del></figcaption>
+                <figcaption class="figure-caption" style="color: #ff6c00">#{{data?.price}} | ${{data?.dollars}}</figcaption>
+              </div>
+              <div class="col-md-5">
+                <div class="tittle">{{data?.tittle}}</div>
+                <div class="editor"><span class="font-weight-bold">Edited by: </span>{{data?.editor}}</div>
+                <div class="editor"><span class="font-weight-bold">File Type: </span>{{data?.type}}</div>
+                <div class="content">{{data?.typed_abstract}}</div>
+              </div>
+         
+              <div class="col-md-3 offset-2 mt-md-5">
+                <button class="btn">Add to cart</button>
+              </div>
+          </div>
+      </div> 
+  </div>
+</div>

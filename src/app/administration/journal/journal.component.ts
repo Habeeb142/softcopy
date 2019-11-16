@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ServerService } from 'src/app/server.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { TemporaryStorageService } from 'src/app/temporary-storage.service';
+import { Router } from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -16,6 +18,7 @@ export class JournalComponent implements OnInit {
   public citation_abstract;
   public citation;
   public id;
+  
   public book = {
    
   }
@@ -35,7 +38,7 @@ export class JournalComponent implements OnInit {
   public contributor = {
     tittle: null,
     abstract: null,
-    citation_abstract: null,
+    typed_abstract: null,
     format:  null
   }
 
@@ -47,7 +50,7 @@ export class JournalComponent implements OnInit {
   public formData;
   public arrForContributoFile = [];
 
-  constructor(private server: ServerService,private formBuilder: FormBuilder) { }
+  constructor(private server: ServerService,private formBuilder: FormBuilder, private temp: TemporaryStorageService, public rout: Router) { }
 
   ngOnInit() {
     this.show = 'Journal Detail not yet submited';
@@ -80,7 +83,8 @@ export class JournalComponent implements OnInit {
       // console.log(dataUserPic);
       this.server.submitCover(this.formData).subscribe(dataUserPic=>{
         this.server.submitBook(this.book,this.fileArr, this.file.name).subscribe(data=>{
-        console.log(data)
+        // console.log(data)
+        this.temp.storeSubmitted(this.file.name);
         this.id = data;
         this.show = 'Journal Detail Submitted with Journal Id: ' +data;
         this.color = 'text-success';
@@ -111,12 +115,12 @@ export class JournalComponent implements OnInit {
       this.content.format = '';
     }
     else {
-      this.fileArr.push(this.file.name,this.file.size);
+      this.fileArr.push(this.file.name,this.file.size, this.file.type);
       const formData2 = new FormData();
       formData2.append('format', this.file_info.get('format').value);
       //submitting file to service
       this.server.submitFile(formData2).subscribe(data=>{
-        if(data==true){
+        if(data==true){console.log(this.fileArr)
           this.pdfstatus = "Successfully uploaded PDF File"
         }
         else {
@@ -136,7 +140,7 @@ export class JournalComponent implements OnInit {
       this.content.epubformat = '';
     }
     else {
-      this.fileArr.push(this.file.name,this.file.size);
+      this.fileArr.push(this.file.name,this.file.size, this.file.type);
       const formData2 = new FormData();
       formData2.append('format', this.file_info.get('format').value);
       //submitting file to service
@@ -155,13 +159,13 @@ export class JournalComponent implements OnInit {
     this.file = event.target.files[0];
     this.file_info.get('format').setValue(this.file);
     console.log(this.file)
-    if(this.file.type!=='application/pdf'){
+    if(this.file.type!==''){
       alert('PRC format is required');
       this.content.prcformat = '';
 
     }
     else {
-      this.fileArr.push(this.file.name,this.file.size);
+      this.fileArr.push(this.file.name,this.file.size, this.file.type);
       const formData2 = new FormData();
       formData2.append('format', this.file_info.get('format').value);
       //submitting file to service
@@ -186,7 +190,7 @@ export class JournalComponent implements OnInit {
       this.content.mp3format = '';
     }
     else {
-      this.fileArr.push(this.file.name,this.file.size);
+      this.fileArr.push(this.file.name,this.file.size, this.file.type);
       const formData2 = new FormData();
       formData2.append('format', this.file_info.get('format').value);
       //submitting file to service
@@ -480,7 +484,7 @@ idverify(event) {
       console.log(data);
       this.number_of_contributors = this.chapterArr.length;
       this.contributor.tittle='';
-      this.contributor.citation_abstract='';
+      this.contributor.typed_abstract='';
       this.contributor.format='';
       $('.input1').removeClass('d-block');
       $('.input1').addClass('d-none');
@@ -488,6 +492,17 @@ idverify(event) {
       $('.input2').addClass('d-block');
      
     })
+  }
+
+  alldone() {
+    // $('.form1').removeClass('d-block');
+    // $('.form1').addClass('d-none');
+    // $('.form2').removeClass('d-block');
+    // $('.form2').addClass('d-none');
+    // $('.success').removeClass('d-none');
+    // $('.success').addClass('d-block');
+    this.rout.navigate(['success']);
+
   }
 }
 

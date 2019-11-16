@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SenderService } from '../sender.service';
+import { Router } from '@angular/router';
 
 declare var $: any;
 
@@ -13,7 +14,7 @@ export class NavComponent implements OnInit {
   
 
 
-  constructor(private sender: SenderService) { }
+  constructor(private sender: SenderService, public rout: Router) { }
 
   ngOnInit() {
     $(document).ready(function(){
@@ -88,16 +89,11 @@ export class NavComponent implements OnInit {
     //used to trigger a function in  from nav component
     this.sender.send(x);
   }
-  // openModalTextbooks() {
-  //   //used to trigger a function in  from nav component
-  //   this.sender.send()
-  // }
-
-  // openModalThesis() {
-  //   //used to trigger a function in  from nav component
-  //   this.sender.send()
-  // }
-
-
+ 
+  fakeRouter(val) {alert(val)
+    
+        this.rout.navigate([`/soft-readers/${val}`]);
+    
+  }
 
 }

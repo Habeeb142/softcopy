@@ -1,3 +1,7 @@
+button {
+    border: 0;
+    font-size: 14px
+}
 i {
     color: #f1a46d;
     border-radius: 10px;
@@ -5,9 +9,15 @@ i {
     cursor: pointer;
 }
 
+.up {
+    margin-top: 100px;
+}
+.up1{
+    margin-top: 160px;
+}
 .card-body {
-    border-right: 7px solid #f1a46d;
-    border-left: 14px solid #f1a46d;
+    
+    background-color: #F6F6F6;
 }
 
 @media screen and (max-width: 650px) {
@@ -15,29 +25,31 @@ i {
         border-right: 1px solid #f1a46d;
         border-left: 1px solid #f1a46d;
     }
+
+    .scroll {
+        display: none;
+    }
 }
 
-#findingsMobile::-webkit-scrollbar{
-    width: .2em; 
-    height: .2em
+#findingsMobile::-webkit-scrollbar {
+    width: .05em; 
+    height: .3em;
+    background-color: #fff;
 }
-
-.card {
-    background-color: #F6F6F6;
-}
-
 #findingsMobile::-webkit-scrollbar-thumb{
     background-color: #ff6c00;
     border-radius: 10px
 }
-
-
+#findingsMobile::-webkit-scrollbar-thumb:hover {
+    background-color: brown;
+}
 
 #findingsMobile{
     overflow-x: auto;
     white-space: nowrap;
     color: whitesmoke
 }
+
 
 .findingsMobile {
     display: inline-block;
@@ -46,4 +58,25 @@ i {
 
 img {
     border-radius: 3px
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: .5;
+}
+
+.middle {
+    max-width: 100px;
+    font-size: 12px;
+    position: absolute;
+    text-align: left;
+    color: green;
+    white-space: normal
+}
+img {
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

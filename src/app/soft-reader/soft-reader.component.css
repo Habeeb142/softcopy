@@ -1,0 +1,17 @@
+a {
+     text-decoration: none;
+     color: grey;
+ }
+
+ a:hover .head {
+    color: #ff6c00;
+ }
+
+ .head {
+     color: grey;
+ }
+
+ .body {
+     color: grey;
+     font-size: 13px;
+ }

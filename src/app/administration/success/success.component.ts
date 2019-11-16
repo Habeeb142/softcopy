@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TemporaryStorageService } from 'src/app/temporary-storage.service';
 
 @Component({
   selector: 'app-success',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuccessComponent implements OnInit {
 
-  constructor() { }
+  public data;
+  constructor(private fetch: TemporaryStorageService) { }
 
   ngOnInit() {
+    this.data = this.fetch.getData()
   }
-
+ 
 }

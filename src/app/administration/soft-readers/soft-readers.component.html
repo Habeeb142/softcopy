@@ -1,0 +1,149 @@
+<h2 style="border-bottom: 4px double grey; color: grey;" class="p-2">Soft Reader's Template</h2>
+<form class="form-group row form1" (submit)='submit()'>
+  <div class="col-6">
+    <label for="" class="labelEditor">Author</label>
+    <input type="text" class="form-control col-12" name="author" required [(ngModel)]="book.author" placeholder="Enter Author's name" (click)='resizeLabel(1)'>
+  </div>
+
+  <div class="col-6">
+    <label for="" class="labelYear">Published Year</label>
+    <input type="number" min="1" name="year" required [(ngModel)]="book.year" class="form-control col-12" placeholder="Enter Published Year" (click)='resizeLabel(2)'>
+  </div>
+
+  <div class="col-12 col-md-6 mt-2">
+    <label for="" class="labeltittle">Book Tittle</label>
+    <input type="text" name="tittle" required [(ngModel)]="book.tittle" class="form-control col-12" placeholder="Enter Tittle of Textbook" (click)='resizeLabel(3)'>
+  </div>
+
+  <div class="col-12 col-md-6 mt-2">
+    <label for="" class="labelcity">City</label>
+    <input type="text" class="form-control col-12" name="city" [(ngModel)]="book.city" placeholder="Enter Published City" (click)='resizeLabel(6)'>
+  </div>
+
+  <div class="col-12 col-md-6 mt-2">
+    <label for="" class="labelcity">Publsiher</label>
+    <input type="text" class="form-control col-12" name="publisher" [(ngModel)]="book.publisher" placeholder="Enter Publisher name" (click)='resizeLabel(7)'>
+  </div>
+
+  <div class="col-12 col-md-6 mt-2">
+    <label for="" class="labelisbn">ISBN</label>
+    <input type="text" class="form-control col-12" placeholder="Enter ISBN" name="isbn" [(ngModel)]="book.isbn" (click)='resizeLabel(8)'>
+  </div>
+
+  <div class="col-12 col-md-6 mt-2">
+    <label for="" class="labelprice">Price</label>
+    <input type="number" required class="form-control col-12" placeholder="Enter Price" name="price" [(ngModel)]="book.price" (click)='resizeLabel(9)'>
+  </div>
+
+  <div class="col-12 col-md-6 mt-2">
+    <label for="" class="labelprice">No of Pages</label>
+    <input type="number" class="form-control col-12" placeholder="Number of Pages" name="page_number" [(ngModel)]="book.page_number" (click)='resizeLabel(9)'>
+  </div>
+
+  <div class="col-12 col-md-6 mt-2">
+    <label for="" class="labelprice">About the Author</label>
+    <textarea class="form-control col-12" placeholder="About the Author" name="abt_author" [(ngModel)]="book.abt_author" (click)='resizeLabel(9)'></textarea>
+  </div>
+
+  <div class="col-12 col-md-6 mt-2">
+    <label for="" class="labelprice">Author's Image</label>
+    <input type="file" class="form-control col-12" (change)='image($event)' [(ngModel)]="book.author_image"name="author_image"  (click)='resizeLabel(9)'>
+  </div>
+
+  <div class="col-12 col-md-6 mt-2">
+    <label for="" class="labelprice">Comment about the Book</label>
+    <textarea class="form-control col-12" placeholder="Comment about the book" name="comment" [(ngModel)]="book.comment" (click)='resizeLabel(9)'></textarea>
+  </div>
+  <div class="col-12 col-md-6 mt-2">
+    <label for="" class="labelprice">Little Extract about the Book</label>
+    <textarea class="form-control col-12" placeholder="Extract about the book" name="extract" [(ngModel)]="book.extract" (click)='resizeLabel(9)'></textarea>
+  </div>
+
+  <div class="col-12 col-md-6 mt-2">
+    <label for="" class="labeldept">Department</label>
+    <select class="form-control col-12" required name="department" [(ngModel)]="book.department" (click)='resizeLabel(11)'>
+      <option value="Creative Writings">Creative Writings</option>
+      <option value="Spiritual & Religious">Spiritual & Religious</option>
+      <option value="Health & Fitness">Health & Fitness</option>
+      <option value="Entertainment">Entertainment</option>
+      <option value="Economics & Business">Economics & Business</option>
+      <option value="Unexpected Books">Unexpected Books</option>
+    </select>
+  </div>
+
+  <div class="col-12 col-md-6 mt-2">
+      <label for="" class="labelformat">Format</label>
+      <input type="text" class="form-control col-12" name="format" [(ngModel)]="book.format" placeholder="Type format and seperate with commas" (click)='resizeLabel(12)'>
+  </div>
+  
+  <div class="col-12 col-md-3 mt-2">
+      <label for="" class="labelformat">PDF</label><span class="text-success" style="font-size: 11px;">{{pdfstatus}}</span>
+      <input type="file" class="form-control col-12" name="format" (change)="pdf($event)" [(ngModel)]="content.format" (click)='resizeLabel(12)'>
+  </div>
+  <div class="col-12 col-md-3 mt-2"><span class="text-success" style="font-size: 11px;">{{epubstatus}}</span>
+      <label for="" class="labelformat">EPUB Format</label>
+      <input type="file" class="form-control col-12" name="format" (change)="epuc($event)" [(ngModel)]="content.epubformat" placeholder="Submit Pdf" (click)='resizeLabel(12)'>
+  </div>
+  <div class="col-12 col-md-3 mt-2">
+      <label for="" class="labelformat">PRC</label><span class="text-success" style="font-size: 11px;">{{prcstatus}}</span>
+      <input type="file" class="form-control col-12" name="format" (change)="prc($event)" [(ngModel)]="content.prcformat" placeholder="Submit Pdf" (click)='resizeLabel(12)'>
+  </div>
+  <div class="col-12 col-md-3 mt-2">
+      <label for="" class="labelformat">MP3</label><span class="text-success" style="font-size: 11px;">{{mp3status}}</span>
+      <input type="file" class="form-control col-12" name="format" (change)="mp3($event)" [(ngModel)]="content.mp3format" (click)='resizeLabel(12)'>
+  </div>
+
+  <div class="col-12 col-md-6 ">
+      <label for="" class="labelimage">Upload Cover</label><span class="text-success" style="font-size: 11px;">{{coverstatus}}</span>
+      <input type="file" class="form-control col-12" placeholder="Submit Image" (change)="cover($event)" name="cover" [(ngModel)]="book.cover" (click)='resizeLabel(10)'>
+    </div>
+  
+  <div class="col-12 col-md-6">
+    <label for="" class="labelimage">Submit</label>
+    <button class="btn col-12 btn-info form-control" style="font-size: 13px;">
+        Submit
+    </button>
+  </div>
+</form>
+
+<!-- <form class="d-none form2">
+  <input type="text" readonly class="form-control text-center {{color}} col-12 mt-3"  value="{{show}}">
+      <div class="col-12 mt-2">
+          <label for="" class="labelformat">Your Soft Reader Id</label>
+          <input type="text" class="form-control d-block input1 col-12" name="textbookId" [(ngModel)]="chapter.textbookId" placeholder="Soft ReaderId here" (keyup)='idverify($event)'>
+          <input type="text" class="form-control col-12 d-none input2" style="cursor: not-allowed" readonly placeholder="Soft Reader Id here" (click)='resizeLabel(12)'>
+      </div>
+    <div class="col-12 mt-2">
+      <label for="" class="labelformat">Chapter</label>
+      <textarea class="form-control col-12" name="chapter" [(ngModel)]="chapter.chapter" placeholder="Chapter here" (click)='resizeLabel(12)'></textarea>
+    </div>
+
+    
+   <div class="row mt-4">
+  
+      <div class="col-6">
+        <label for="" class="labelimage">Submit this Chapter</label>
+        <button class="btn col-12 btn-info form-control" (click)='newTittle()' style="font-size: 13px;">
+          <span>{{number_of_chapters}}</span> chapters added so far. Click me to add more.
+        </button>
+      </div>
+      <div class="col-6">
+        <label for="" class="labelimage">Submit All TextBook Detail</label>
+        <a class="btn col-12 btn-danger form-control" style="font-size: 13px;" (click)='alldone()'> 
+          Done, Submit TextBook Now
+        </a>
+      </div>
+    </div> 
+  </form>-->
+
+<div class="success">
+  <app-success></app-success>
+</div>
+
+
+
+
+
+
+
+

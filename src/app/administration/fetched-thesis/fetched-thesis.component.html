@@ -1,0 +1,44 @@
+<div>
+    <div class="sticky-top">
+  
+      <app-admin></app-admin>
+    </div>
+  
+  <div class="row container offset-2 mt-4 journals">
+    <table class="table" style="color: grey; border-radius: 10px;">
+      <thead style=" color: white;" class="bg-info">
+        <tr>
+          <th>Cover</th>
+          <th>Tittle</th>
+          <th>Researcher</th>
+          <th>Institution</th>
+          <th>Format</th>
+          <th>Department</th>
+          <th>Size</th>
+          <th>Price</th>
+          <th>Date Uploaded</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr *ngFor="let data of thesis" style="white-space: nowrap;">
+          <td><img src="softcopy/backend/cover/{{data.cover}}" style="border-radius: 9px;" class="img img-rounded" height="120" width="100" alt=""></td>
+          <td>{{data.tittle}}</td>
+          <td>{{data.researcher}}</td>
+          <td>{{data.institution}}</td>
+          <td>{{data.type}}</td>
+          <td>{{data.department}}</td>
+          <td>{{data.size}} kb</td>
+          <td>#{{data.price}} | ${{data.dollars}}</td>
+          <td>{{data.created_at}}</td>
+          <td><a href=""><i class="fa fa-edit" style="color: #ff6c00;"></i></a></td>
+          <td><a href=""><i class="fa fa-trash" style="color: #ff6c00;"></i></a></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+    
+  </div>

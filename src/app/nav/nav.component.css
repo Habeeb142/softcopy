@@ -14,7 +14,8 @@ nav {
 }
 
 a {
-    color: wheat
+    color: wheat;
+    cursor: pointer;
 }
 
 button {
@@ -30,10 +31,6 @@ input {
     padding: 18px
 }
 
-a{
-    text-decoration: none;
-    display: block
-}
 li {
     border-bottom: 0;
     letter-spacing: 1px;
@@ -62,12 +59,18 @@ li:hover {
 
 #horizontalScroll::-webkit-scrollbar-thumb {
     background-color: #ff6c00;
-    border-radius: 10px
+    border-radius: 10px;
 }
 
-span {
+a, span {
     font-weight: normal;
     padding: 7px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px
+}
+
+a{
+    text-decoration: none;
+    /* display: block */
+    font-size: 12px
 }

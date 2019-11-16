@@ -1,0 +1,29 @@
+<div class="loader">
+    <img src="assets/fav.png" width="300" height="250" class="container col-6 col-md-2 offset-3 offset-md-5" alt="">
+    <img src="assets/logo.png" width="330" height="80" class="container col-6 col-md-2 offset-3 offset-md-5" alt="">
+</div> 
+
+<!-- Admin Login Section -->
+<div class="card content col-sm-8 col-md-4 offset-md-2">
+    <div class="card-header">
+      Admin
+    </div>
+    <div class="card-body">
+        <div class="alert text-center font-weight-bold {{warning}}">{{ err }}</div>
+            <form  (submit)="loginAdmin()" class="form acc" autocomplete="off">
+                <div class="form-group">
+                  <label for="acc_no" class="control-label">Username:</label>
+                  <input type="name" class="form-control" placeholder="enter username" [(ngModel)]="admin.username" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                  <label for="password" class="control-label">Password:</label>
+                  <input type="password" class="form-control" placeholder="password" [(ngModel)]="admin.pwd" [ngModelOptions]="{standalone: true}">
+                </div>
+                <input type="submit" class="btn" value="Login">
+            </form>
+    
+     </div>
+</div>
+  
+  
+  

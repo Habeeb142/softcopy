@@ -1,3 +1,4 @@
+<h2 style="border-bottom: 4px double grey; color: grey;" class="p-2">Journal's Template</h2>
 <form class="form-group row form1" (submit)='submit()'>
     <div class="col-6">
       <label for="" class="labelEditor">Editor</label>
@@ -36,7 +37,7 @@
   
     <div class="col-12 col-md-6 mt-2">
       <label for="" class="labelisbn">ISBN</label>
-      <input type="number" class="form-control col-12" placeholder="Enter ISBN" name="isbn" [(ngModel)]="book.isbn" (click)='resizeLabel(8)'>
+      <input type="text" class="form-control col-12" placeholder="Enter ISBN" name="isbn" [(ngModel)]="book.isbn" (click)='resizeLabel(8)'>
     </div>
   
     <div class="col-12 col-md-6 mt-2">
@@ -57,7 +58,7 @@
         <option value="Computer Science">Computer Science</option>
         <option value="Education">Education</option>
         <option value="Engineering">Engineering</option>
-        <option value="humanities">Humanities</option>
+        <option value="Humanities">Humanities</option>
         <option value="Law">Law</option>
         <option value="Medicine & Health Sciences">Medicine & Health Sciences</option>
         <option value="Science & Mathematics">Science & Mathematics</option>
@@ -120,11 +121,11 @@
   </div>
   <div class="col-12 mt-2">
       <label for="" class="labelformat">Contributor Citation</label><span class="text-success" style="font-size: 11px;">{{citation}}</span>
-      <input type="file" class="form-control col-12" name="format" [(ngModel)]="contributor.fromat" (change)="contributorCitationFile($event)" placeholder="Submit Pdf" (click)='resizeLabel(12)'>
+      <input type="file" class="form-control col-12" name="format" [(ngModel)]="contributor.format" (change)="contributorCitationFile($event)" placeholder="Submit Pdf" (click)='resizeLabel(12)'>
   </div>
   <div class="col-12 mt-2">
       <label for="" class="labelformat">Citation & Abstract</label><span class="text-success" style="font-size: 11px;">{{citation_abstract}}</span>
-      <input type="file" class="form-control col-12" name="format" [(ngModel)]="contributor.fromat" (change)="contributorCitationAbstractFile($event)"  placeholder="Submit Pdf" (click)='resizeLabel(12)'>
+      <input type="file" class="form-control col-12" name="format" [(ngModel)]="contributor.format" (change)="contributorCitationAbstractFile($event)"  placeholder="Submit Pdf" (click)='resizeLabel(12)'>
   </div>
   
   <div class="row">
@@ -136,17 +137,14 @@
       </button>
     </div>
     <div class="col-6">
-      <label for="" class="labelimage">New Journal</label>
-      <a href="/add" class="btn col-12 btn-danger form-control" style="font-size: 13px;">
-        Done, Add new Journal
+      <label for="" class="labelimage">Submit All Journal(contribution finished)</label>
+      <a class="btn col-12 btn-danger form-control" style="font-size: 13px;" (click)='alldone()'>
+        Done, Submit Journal Now
       </a>
     </div>
   </div>
 </form>
 
-<div class="success d-none">
-    <app-success></app-success>
-</div>
 
 
 

@@ -1,0 +1,154 @@
+<app-nav ></app-nav>
+<app-side-bar></app-side-bar>
+<!-- Modal -->
+<div class="modal fade mt-5" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-bold" id="exampleModalLongTitle">SOFT RESEARCHERS</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 class=" mt-2 font-weight-bold">{{ header }}</h5>
+                <a href="/{{q}}/Bussiness & Finance" class="list-group-item list-group-item-action bg-light">Bussiness & Finance</a>
+                <a href="/{{q}}/Communication and Journalism" class="list-group-item list-group-item-action bg-light">Communication and Journalism</a>
+                <a href="/{{q}}/Computer Science" class="list-group-item list-group-item-action bg-light">Computer Science</a>
+                <a href="/{{q}}/Education" class="list-group-item list-group-item-action bg-light">Education</a>
+                <a href="/{{q}}/Enginnering" class="list-group-item list-group-item-action bg-light">Enginnering</a>
+                <a href="/{{q}}/Humanitarian" class="list-group-item list-group-item-action bg-light">Humanitarian</a>
+                <a href="/{{q}}/Law" class="list-group-item list-group-item-action bg-light">Law</a>
+                <a href="/{{q}}/Medicine & Health Sciences" class="list-group-item list-group-item-action bg-light">Medicine & Health Sciences</a>
+                <a href="/{{q}}/Library & Archival Information Technology" class="list-group-item list-group-item-action bg-light">Library & Archival Information Technology</a>
+                <a href="/{{q}}/Science & Mathematics" class="list-group-item list-group-item-action bg-light">Science & Mathematics</a>
+                <a href="/{{q}}/Social Sciences" class="list-group-item list-group-item-action bg-light">Social Sciences</a>
+                <a href="/{{q}}/Test Prep & Study Guides" class="list-group-item list-group-item-action bg-light">Test Prep & Study Guides</a>
+            </div>
+        </div>
+    </div>    
+</div>
+
+<div class="container-md col-md-8 row offset-md-3 bg-light p-2">
+  <!-- general Display -->
+  <div class="col-12 col-md-5">
+    <h3 class="ml-3 mt-2">{{data?.tittle}}</h3>
+    <div class="ml-3" style="color: green; font-size: 13px;" *ngIf="!thesis">Published By: {{data?.publisher}}</div>
+    <div class="ml-3" style="color: green; font-size: 13px;"  *ngIf="textbook || softReader">Author: {{data?.author}}</div>
+    <div class="ml-3" style="color: green; font-size: 13px;"  *ngIf="journal">Editor: {{data?.editor}}</div>
+    <div class="ml-3" style="color: green; font-size: 13px;"  *ngIf="thesis">Researcher: {{data?.researcher}}</div>
+    <div class="ml-3" style="color: green; font-size: 13px;"  *ngIf="thesis">Supervisor: {{data?.supervisor}}</div>
+    <div class="ml-3" style="color: green; font-size: 13px;"  *ngIf="thesis">Institution: {{data?.institution}}</div>
+    <div class="ml-3" style="color: red; font-size: 13px;">Format: {{data?.type}}</div>
+    
+    <a class="figure p-3 img1 animated">
+      <img src="softcopy/backend/cover/{{data?.cover}}" class="figure-img img-fluid rounded" style="height: 240px; width: 170px;" alt="">
+      <figcaption class="figure-caption text-center mt-2" ><button class="btn">Add to Cart</button></figcaption>
+      <figcaption class="figure-caption text-center" ><del>${{data?.fakedollars}}</del></figcaption>
+      <figcaption class="figure-caption text-center" style="color: #ff6c00">#{{data?.price}} | ${{data?.dollars}}</figcaption>
+    </a>
+
+    <!-- div showing the smaller details under the add to cart button -->
+    <div class="col-11 offset-md-1" style="color: green; font-size: 11px;">Published Year: {{data?.publication_year}} {{data?.year}}</div>
+    <div class="col-11 offset-md-1" style="color: green; font-size: 11px;" *ngIf="!thesis">Published City: {{data?.city}}</div>
+    <div class="col-11 offset-md-1" style="color: green; font-size: 11px;" *ngIf="!thesis">ISBN: {{data?.isbn}}</div>
+    <div class="col-11 offset-md-1" style="color: green; font-size: 11px;">Tittle: {{data?.tittle}}</div>
+    <div class="col-11 offset-md-1" style="color: green; font-size: 11px;" *ngIf="journal">Editor: {{data?.editor}}</div>
+    <div class="col-11 offset-md-1" style="color: green; font-size: 11px;" *ngIf="textbook || softReader">Author: {{data?.author}}</div>
+    <div class="col-11 offset-md-1" style="color: green; font-size: 11px;" *ngIf="!thesis">Publisher: {{data?.publisher}}</div>
+    <div class="col-11 offset-md-1" style="color: green; font-size: 11px;">Size: {{data?.size}} Mb</div>
+    <div class="col-11 offset-md-1" style="color: green; font-size: 11px;" *ngIf="journal">Vol. : {{data?.volume}}</div>
+    <div class="col-11 offset-md-1" style="color: green; font-size: 11px;" *ngIf="journal">No. : {{data?.number}}</div>
+    <div class="col-11 offset-md-1" style="color: green; font-size: 11px;" *ngIf="thesis">Researcher: {{data?.researcher}}</div>
+    <div class="col-11 offset-md-1" style="color: green; font-size: 11px;" *ngIf="thesis">Supervisor: {{data?.supervisor}}</div>
+    <div class="col-11 offset-md-1" style="color: green; font-size: 11px;" *ngIf="thesis">Institution: {{data?.institution}}</div>
+  </div>
+
+  <!-- //for jurnal -->
+  <div class="col-12 col-md-5 mt-3" *ngIf="journal;"> 
+    <h5 class="col-12 text-center">Contributions:</h5>
+    <ul class="col-12 pb-2 mb-2 list-group list-group-flush" *ngFor="let abstract of d; index as i">
+      <li class="list-group-item list-group-item-action bg-light" (click)="toggle(i)">{{abstract?.contributor}}</li>
+
+      <div style="display: none;" id="{{i}}">
+        <div style="font-size: 11px;" class="animated fadeIn">
+            {{abstract?.typed_abstract}}
+        </div>
+        <a href="softcopy/backend/fileUpload/{{data?.citation_abstract}}" download="Abstract" class="b col-3 animated fadeIn" style="font-size: 11px;"><i class="fa fa-download"></i> Abstract</a>
+        <a href="softcopy/backend/fileUpload/{{data?.citation}}" download="Citation" style="font-size: 11px;" class="b col-3 offset-1"><i class="fa fa-download animated fadeIn"></i>Citation</a>
+        <button class="b offset-1" style="font-size: 12px;">Add to Cart</button>
+      </div>
+
+    </ul>
+  </div>
+
+  <!-- and textbook -->
+  <div class="col-12 col-md-5 mt-3" *ngIf="textbook">
+    <div class="ml-3 comment pb-2"  style="border-bottom: 2px solid white; font-size: 12px;">
+      <h5 style="font-size: 15px;">Contents:</h5>
+      {{data?.chapter}}
+    </div>
+
+    <div class="ml-3 comment pb-2"  style="border-bottom: 2px solid white; font-size: 12px;">
+      <h5 style="font-size: 15px;">Extract:</h5>
+      {{data?.extract}}
+    </div>
+
+    <div class="ml-3 mt-3 about_author pb-2"  style="border-bottom: 2px solid white; font-size: 12px;">
+      <h5 style="font-size: 15px;">About the Author: </h5>
+      <img src="softcopy/backend/fileUpload/{{data?.author_image}}" class="img rounded" height="90" width="80" style="margin-bottom: 5px;" /><br /> {{data?.about_author}}
+    </div>
+
+    <div class="ml-3 comment pb-2"  style="border-bottom: 2px solid white; font-size: 12px;">
+      <h5 style="font-size: 15px;">Comments:</h5>
+      {{data?.comment_about_book}}
+    </div>
+  </div>
+  <!-- end -->
+
+  <!-- and thesis -->
+  <div class="col-12 col-md-5 mt-3" *ngIf="thesis">
+    <div class="ml-3 comment pb-2"  style="border-bottom: 2px solid white; font-size: 12px;">
+      <h5 style="font-size: 15px;">Contents:</h5>
+      {{data?.table_of_content}}
+    </div>
+
+    <div class="ml-3 comment pb-2"  style="border-bottom: 2px solid white; font-size: 12px;">
+      <h5 style="font-size: 15px;">Abstract:</h5>
+      {{data?.extract}}
+    </div>
+
+  </div>
+<!-- end -->
+
+<!-- softReader -->
+  <div class="col-12 col-md-5 mt-3" *ngIf="softReader">
+    <div class="ml-3 comment pb-2"  style="border-bottom: 2px solid white; font-size: 12px;">
+      <h5 style="font-size: 15px;">Extract:</h5>
+      {{data?.extract}}
+    </div>
+
+    <div class="ml-3 mt-3 about_author pb-2"  style="border-bottom: 2px solid white; font-size: 12px;">
+      <h5 style="font-size: 15px;">About the Author: </h5>
+      <img src="softcopy/backend/fileUpload/{{data?.author_image}}" class="img rounded" height="90" width="80" style="border-radius: 50px; margin-bottom: 5px;" /><br /> {{data?.about_author}}
+    </div>
+
+    <div class="ml-3 comment pb-2"  style="border-bottom: 2px solid white; font-size: 12px;">
+      <h5 style="font-size: 15px;">Comments:</h5>
+      {{data?.comment_about_book}}
+    </div>
+  </div>
+<!-- end -->
+
+<!-- related -->
+  <div class="col-12 col-md-2 mt-3">
+    <h5 style="font-size: 13px;">Related Books</h5>
+    <a href="/show/{{similar?.referal}}/{{similar?.id}}/{{similar?.type}}" class="figure mb-2 col-3 col-md-12" *ngFor="let similar of similar" style="border-bottom: 1px solid grey;">
+      <img src="softcopy/backend/cover/{{similar?.cover}}" class="figure-img img-fluid rounded" style="height: 80px" width="70px" alt="">
+      <div class="figure-caption" style="color: green; font-size: 9px;">Price: {{similar?.price}}</div>
+      <div class="figure-caption" style="color: green; font-size: 9px;">{{similar?.tittle}}</div>
+    </a>
+  </div>
+<!-- end -->
+  
+</div>

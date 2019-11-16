@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataFetcherService } from '../data-fetcher.service';
 declare var $: any
 
 @Component({
@@ -8,45 +9,20 @@ declare var $: any
 })
 export class FourthSlideComponent implements OnInit {
 
-  constructor() { }
-  public x;
+  constructor(private fetcher: DataFetcherService) { }
+  public data = [];
 
   ngOnInit() {
-  }
-  arrow_right_findings3() {
-    if(this.x==1) {
-      $('.img6').css('display','inline');
-      $('.img5').css('display','none');
-      $('.img6').removeClass('slideInRight');
-      $('.img6').addClass('slideInRight');
-      this.x = 0;
-    }
+    this.fetcher.getThesisData().subscribe(data=>{
+      this.data = data;
+     })
 
-    else{
-      $('.img5').css('display','inline');
-      $('.img6').css('display','none');
-      $('.img5').removeClass('slideInRight');
-      $('.img5').addClass('slideInRight');
-      this.x = 1;
-    }
+      $('.__a').click(function(){
+      $('html, body').animate({
+        scrollTop: $('.card').offset().top+1350
+      }, 1000)
+    })
   }
 
-  arrow_left_findings3() {
-    if(this.x==1) {
-      $('.img5').css('display','inline');
-      $('.img6').css('display','none');
-      $('.img5').removeClass('slideInLeft');
-      $('.img5').addClass('slideInLeft');
-      this.x = 0;
-    }
-
-    else {
-      $('.img6').css('display','inline');
-      $('.img5').css('display','none');
-      $('.img6').removeClass('slideInLeft');
-      $('.img6').addClass('slideInLeft');
-      this.x = 1;
-    }
-  }
 
 }

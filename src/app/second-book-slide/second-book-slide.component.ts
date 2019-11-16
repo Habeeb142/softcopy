@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataFetcherService } from '../data-fetcher.service';
 declare var $: any;
 
 @Component({
@@ -7,48 +8,24 @@ declare var $: any;
   styleUrls: ['./second-book-slide.component.css']
 })
 export class SecondBookSlideComponent implements OnInit {
-  public x;
-  constructor() { }
+  public data = [];
+  
+  constructor(private fetcher: DataFetcherService) { }
 
    ngOnInit() {
+         //fetching softreaders from temp storage
+    this.fetcher.getSoftReaderData().subscribe(data=>{
+     this.data = data;
+    })
+    
+    $('._a').click(function(){
+      $('html, body').animate({
+        scrollTop: $('.card').offset().top+180
+      }, 1000)
+   })
+
   }
 
-
-  arrow_right_findings2() {
-    if(this.x==1) {
-      $('.img4').css('display','inline');
-      $('.img3').css('display','none');
-      $('.img4').removeClass('slideInRight');
-      $('.img4').addClass('slideInRight');
-      this.x = 0;
-    }
-
-    else{
-      $('.img3').css('display','inline');
-      $('.img4').css('display','none');
-      $('.img3').removeClass('slideInRight');
-      $('.img3').addClass('slideInRight');
-      this.x = 1;
-    }
-  }
-
-  arrow_left_findings2() {
-    if(this.x==1) {
-      $('.img3').css('display','inline');
-      $('.img4').css('display','none');
-      $('.img3').removeClass('slideInLeft');
-      $('.img3').addClass('slideInLeft');
-      this.x = 0;
-    }
-
-    else {
-      $('.img4').css('display','inline');
-      $('.img3').css('display','none');
-      $('.img4').removeClass('slideInLeft');
-      $('.img4').addClass('slideInLeft');
-      this.x = 1;
-    }
-  }
 
 }
 

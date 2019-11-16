@@ -15,16 +15,25 @@
         <app-textbook></app-textbook>
       </div>
     </div>
-  
-    <div class="thesis">
-  
+    <div class="row mt-1 thesis">
+      <div class="col-12">
+        <app-thesis></app-thesis>
+      </div>
+    </div>
+    <div class="row mt-1 soft-readers">
+      <div class="col-12">
+        <app-soft-readers></app-soft-readers>
+      </div>
     </div>
     
   </div>
-
-  <div class="bg-light border-right font-weight-bold col-5 col-md-2 ml-2 fixed-top  mt-2" id="sidebar-wrapper">
+  
+  <div class="bg-light border-right font-weight-bold col-5 col-md-2 ml-2 fixed-top  mt-5" id="sidebar-wrapper">
     <div style="color: grey;" class="p-3">
-      Welcome Admin
+        Welcome Admin
+      </div>
+    <div class="list-group list-group-flush mt-3">
+        <a href="/" class="sidebar-header list-group-item list-group-item-action bg-light font-weight-bold">Home</a>    
     </div>
 
     <div class="list-group list-group-flush">
@@ -39,12 +48,12 @@
         <div class="sidebar-header p-1 mb-2">SOFT RESEARCHERS</div>
         <a class="list-group-item list-group-item-action bg-light" (click)='journalOn()'>Journals & Proceedings</a>
         <a class="list-group-item list-group-item-action bg-light" (click)='textbookOn()'>Textbook</a>
-        <a href="" class="list-group-item list-group-item-action bg-light">Thesis & Dissertation</a>
+        <a class="list-group-item list-group-item-action bg-light" (click)='thesisOn()'>Thesis & Dissertation</a>
     </div>
   
   
     <div class="list-group list-group-flush mt-4" style="cursor: pointer;">
-        <div class="sidebar-header p-2">SOFT READERS</div>
+        <a class="sidebar-header p-2" (click)='softReaders()'>SOFT READERS</a>
     </div>
   
     <div class="list-group list-group-flush mt-4">
@@ -55,16 +64,13 @@
         <a href="" class="list-group-item list-group-item-action bg-light">Cultural Awareness</a>
     </div>
 
-    <div class="list-group list-group-flush mt-3">
-        <a href="/" class="sidebar-header list-group-item list-group-item-action bg-light font-weight-bold">Home</a>    
-    </div>
 
     <div class="list-group list-group-flush mt-3">
         <a class="sidebar-header list-group-item list-group-item-action bg-light font-weight-bold">Change Password</a>    
     </div>
 
     <div class="list-group list-group-flush mt-3">
-        <a class="sidebar-header list-group-item list-group-item-action bg-light font-weight-bold">Logout</a>    
+        <a (click) = 'logout()' class="sidebar-header list-group-item list-group-item-action bg-light font-weight-bold">Logout</a>    
     </div>
   </div>
 

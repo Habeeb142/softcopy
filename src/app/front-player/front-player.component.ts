@@ -13,6 +13,7 @@ export class FrontPlayerComponent implements OnInit {
   
   public x; 
   public header;; 
+  public q;
   
   ngOnInit() {
     //checking for subscription
@@ -20,7 +21,7 @@ export class FrontPlayerComponent implements OnInit {
   }
 
   checker(): void {
-    if(this.sender.subscription == undefined){
+    if(this.sender.subscription != undefined){
       this.sender.subscription = this.sender.triggerClientData.subscribe(()=>{
           //call the function u wish to call
           this.openModal();
@@ -32,12 +33,13 @@ export class FrontPlayerComponent implements OnInit {
   openModal() {
     //get the paramitized index from service to know which to open it modal
     this.x = this.sender.hold();
+    
     switch(this.x) {
-      case 1: this.header = 'Journals & Proceedings';
+      case 1: this.header = 'Journals & Proceedings'; this.q = 'journals';
       break;
-      case 2: this.header = 'Textbooks';
+      case 2: this.header = 'Textbooks'; this.q = 'textbooks';
       break;
-      case 3: this.header = 'Thesis & Dissertations';
+      case 3: this.header = 'Thesis & Dissertations'; this.q = 'my-thesis';
       break;
     }
     $('#modal').modal('toggle');
